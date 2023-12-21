@@ -22,9 +22,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ./node_modules
-            ./bun.lockb
-            ./dist
+            ./ex-site/node_modules
+            ./ex-site/bun.lockb
+            ./ex-site/dist
           key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
           restore-keys: ${{ runner.os }}-bun-
 
