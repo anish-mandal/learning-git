@@ -1,0 +1,20 @@
+name: Try upload-artifact
+
+on: push
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Create ls.txt
+        run: |
+          cd ./ex-site
+          echo `ls` > ls.txt
+      - name: Upload ls.txt
+        uses: actions/upload-artifact@v4
+        with:
+          name: ls
+          path: ls.txt
+          retention-days: 1

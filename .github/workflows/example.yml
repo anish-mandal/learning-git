@@ -1,6 +1,9 @@
 name: Example action
 
-on: push
+on:
+  push:
+    branches:
+      - new
 jobs:
   ls:
     runs-on: ubuntu-latest
@@ -8,6 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: pwd
+        id: ls
         run: |
           cd ./ex-site
           ls
