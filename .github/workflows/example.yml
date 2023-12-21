@@ -1,15 +1,14 @@
 name: Example action
 
-on:
-  push:
-    branches:
-      - new
+on: workflow_dispatch
+
 jobs:
   ls:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: pwd
         id: ls
         run: |

@@ -1,6 +1,6 @@
 name: Try upload-artifact
 
-on: push
+on: workflow_dispatch
 
 jobs:
   upload:
@@ -8,10 +8,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Create ls.txt
         run: |
           cd ./ex-site
           echo `ls` > ls.txt
+
       - name: Upload ls.txt
         uses: actions/upload-artifact@v4
         with:
