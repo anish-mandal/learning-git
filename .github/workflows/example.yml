@@ -1,8 +1,8 @@
 name: Example action
-run-name: ${{ github.actor }} is learning github actions
+
 on: push
 jobs:
-  check-bats-version:
+  ls:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
