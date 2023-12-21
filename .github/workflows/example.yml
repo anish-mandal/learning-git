@@ -1,0 +1,12 @@
+name: Example action
+run-name: ${{ github.actor }} is learning github actions
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - run: bunx bats -v
